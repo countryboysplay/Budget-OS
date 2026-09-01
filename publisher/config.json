@@ -1,0 +1,33 @@
+{
+     "repo_dir": "C:\\Budget-OS",
+  "sheet": "ANALYSIS FROM GR. SLS. REPORT",
+  "range": "A1:O76",
+  "debounce_seconds": 5,
+  "locations": [
+    {
+      "key": "bowling-green",
+      "label": "Bowling Green",
+      "path": "C:\\Users\\jonat\\Dropbox\\2026\\2026 BOWLING GREEN SALES ANALYSIS\\2026 BOWLING GREEN SALES COMPARISON.xlsm"
+    },
+    {
+      "key": "evansville",
+      "label": "Evansville",
+      "path": "C:\\Users\\jonat\\Dropbox\\2026\\2026 EVANSVILLE SALES ANALYSIS\\2026 EVANSVILLE SALES COMPARISON.xlsm"
+    },
+    {
+      "key": "owensboro",
+      "label": "Owensboro",
+      "path": "C:\\Users\\jonat\\Dropbox\\2026\\2026 OWENSBORO SALES ANALYSIS\\2026 OWENSBORO SALES COMPARISON.xlsm"
+    },
+    {
+      "key": "southern-illinois",
+      "label": "Southern Illinois",
+      "path": "C:\\Users\\jonat\\Dropbox\\2026\\2026 SOUTHERN ILLINOIS SALES ANALYSIS\\2026 SOUTHERN ILLINOIS SALES COMPARISON.xlsm"
+    },
+    {
+      "key": "paducah",
+      "label": "Paducah",
+      "path": "C:\\Users\\jonat\\Dropbox\\2026\\2026 WESTERN KENTUCKY SALES ANALYSIS\\2026 PADUCAH SALES COMPARISON.xlsm"
+    }
+  ]
+}
