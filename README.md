@@ -70,15 +70,30 @@ Anyone not on the list sees a Cloudflare login page, not the data.
 
 ### 5. Run the publisher at logon
 
-Task Scheduler -> Create Basic Task:
+Already set up on the office PC as the scheduled task **Budget OS Publisher**.
+It starts 30 seconds after you sign in and runs headless under `pythonw.exe` --
+no console window. `publisher/budget-os-publisher-task.xml` is the definition,
+so you can recreate it on another machine with:
 
-- Trigger: When I log on
-- Action: Start a program
-- Program: `C:\Users\jonat\Budget-OS\publisher\start_publisher.bat`
-- Start in: `C:\Users\jonat\Budget-OS\publisher`
+    schtasks /Create /TN "Budget OS Publisher" /XML publisher\budget-os-publisher-task.xml /F
 
-Or drop a shortcut to `start_publisher.bat` in
-`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup`.
+Two settings in there matter and are easy to lose if you rebuild the task by
+hand in the Task Scheduler wizard:
+
+- `ExecutionTimeLimit` is `PT0S` (unlimited). The wizard's default stops a task
+  after 3 days, which would silently kill the publisher mid-week.
+- `StopIfGoingOnBatteries` is false, so it keeps running on a laptop.
+
+Managing it:
+
+    schtasks /Query /TN "Budget OS Publisher" /V /FO LIST    is it registered?
+    schtasks /Run   /TN "Budget OS Publisher"                start it now
+    schtasks /End   /TN "Budget OS Publisher"                stop it
+
+Because it's headless, `publisher/publisher.log` is the only place it speaks --
+check there first. The publisher also refuses to start if another copy is
+already running, so you can't end up with two instances racing each other on
+`git commit`.
 
 ## Day to day
 
@@ -86,13 +101,23 @@ Save a workbook in Excel. Within about a minute the site shows the new numbers
 and "updated just now". The status text turns amber if a location hasn't
 published in two days.
 
-`publisher/publisher.log` shows what the publisher did and any errors.
+`publisher/publisher.log` shows what the publisher did and any errors. It runs
+headless, so that log is the only place it reports anything.
+
+If the numbers on the site look stale, check in this order: the log (did the
+publisher see the save?), then `git log` (did it commit and push?), then
+Cloudflare's build history (did the push trigger a deploy?). A break in that
+last link is silent -- pushes keep succeeding and the site keeps serving the
+previous deploy.
 
 ## Commands
 
     python publish.py            publish all, then watch Dropbox for saves
     python publish.py --once     publish all and exit
     python publish.py --no-push  commit locally but don't push (testing)
+
+These refuse to run while the scheduled task holds the lock; stop it first with
+`schtasks /End /TN "Budget OS Publisher"`.
 
 ## Adding or changing a location
 

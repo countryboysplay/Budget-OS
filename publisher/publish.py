@@ -345,6 +345,35 @@ def watch(cfg: dict, push: bool = True) -> None:
         observer.join()
 
 
+# ---------------------------------------------------------------- locking
+
+def acquire_single_instance_lock():
+    """Claim the right to be the only running publisher.
+
+    Returns a handle to hold for the process's lifetime, or None if another
+    publisher already holds it. Two publishers racing on `git commit` will
+    collide on index.lock, and running headless there is no window to notice
+    the duplicate, so this is enforced rather than advisory. Windows drops the
+    mutex when the process ends, so a crash cannot leave a stale lock.
+    """
+    if os.name != "nt":
+        return object()
+    import ctypes
+    from ctypes import wintypes
+
+    ERROR_ALREADY_EXISTS = 183
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.CreateMutexW.restype = wintypes.HANDLE
+    kernel32.CreateMutexW.argtypes = [wintypes.LPCVOID, wintypes.BOOL,
+                                      wintypes.LPCWSTR]
+    handle = kernel32.CreateMutexW(None, False, "BudgetOSPublisher")
+    if not handle:
+        return object()  # can't create the mutex; don't block publishing over it
+    if ctypes.get_last_error() == ERROR_ALREADY_EXISTS:
+        return None
+    return handle
+
+
 # ---------------------------------------------------------------- main
 
 def main() -> int:
@@ -355,12 +384,21 @@ def main() -> int:
                     help="commit but do not push")
     args = ap.parse_args()
 
+    # Under pythonw.exe (headless) there is no console and sys.stdout is None,
+    # so only add the stream handler when there is somewhere to write.
+    handlers = [logging.FileHandler(LOG_PATH, encoding="utf-8")]
+    if sys.stdout is not None:
+        handlers.append(logging.StreamHandler(sys.stdout))
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s",
-        handlers=[logging.FileHandler(LOG_PATH, encoding="utf-8"),
-                  logging.StreamHandler(sys.stdout)],
+        handlers=handlers,
     )
+
+    lock = acquire_single_instance_lock()  # held until the process exits
+    if lock is None:
+        log.error("Another publisher is already running; exiting.")
+        return 1
 
     cfg = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     repo = Path(cfg["repo_dir"])
