@@ -5,10 +5,13 @@ comparison workbook to the sales team, on any phone or desktop.
 
 How it flows:
 
-    Excel on Dropbox  ->  publisher/publish.py (office PC)  ->  data/*.json in this repo
-                      ->  git push  ->  Cloudflare Pages redeploys  ->  team opens the site
+    Excel on Dropbox  ->  publisher/publish.py (office PC)  ->  public/data/*.json
+                      ->  git push  ->  Cloudflare Workers Builds redeploys
+                      ->  team opens the site
 
-The app is plain HTML/JS, no build step. `data/` is generated; don't hand-edit it.
+The app is plain HTML/JS, no build step. Everything the site serves lives in
+`public/`; nothing outside it is published. `public/data/` is generated, so
+don't hand-edit it.
 
 The visual design follows `design-system/budget-os/MASTER.md`, generated with the
 UI/UX Pro Max skill (Flat Design, blue + green palette, Fira Code for numbers,
@@ -38,17 +41,26 @@ The first push opens a GitHub sign-in window. After that, pushes are silent.
 If you'd rather use a token, create a fine-grained token scoped to this repo
 (Contents: read/write) and enter it as the password when prompted.
 
-### 3. Cloudflare Pages
+### 3. Cloudflare
 
-1. Cloudflare dashboard -> Workers & Pages -> Create -> Pages -> Connect to Git
-2. Pick `countryboysplay/Budget-OS`, branch `main`
-3. Framework preset: **None**. Build command: leave empty. Output directory: `/`
-4. Deploy. You'll get a `something.pages.dev` URL. Every push redeploys it.
+The site is the `budget-os` Worker, serving `public/` as static assets.
+`wrangler.jsonc` in the repo root is what tells it that, so the deploy needs no
+build step.
+
+1. Cloudflare dashboard -> Workers & Pages -> `budget-os` -> Settings -> Builds
+2. Git repository must be **connected** to `countryboysplay/Budget-OS`. If it
+   says "This project is disconnected from your Git account", hit **Manage** and
+   re-authorize -- while it's disconnected, pushes land on GitHub and the site
+   silently keeps serving the last deploy.
+3. Production branch `main`, deploy command `npx wrangler deploy`, root `/`.
+4. Every push to `main` then redeploys automatically.
+
+To deploy by hand: `npx wrangler deploy` from the repo root.
 
 ### 4. Lock it down (Cloudflare Access)
 
 1. Zero Trust -> Access -> Applications -> Add an application -> Self-hosted
-2. Application domain: your `something.pages.dev` hostname
+2. Application domain: your `something.workers.dev` hostname
 3. Add a policy: Action **Allow**, Include -> **Emails** (list each agent's
    email) or **Emails ending in** `@yourcompany.com`
 4. Under Authentication, keep **One-time PIN** on. Agents enter their email,

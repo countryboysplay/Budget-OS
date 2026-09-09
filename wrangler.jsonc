@@ -1,0 +1,11 @@
+{
+  // Static-assets-only Worker for Budget OS.
+  // Cloudflare Workers Builds runs `npx wrangler deploy` from the repo root on
+  // every push to main. Only ./public is served, so the publisher source and
+  // repo internals are never exposed by the site.
+  "name": "budget-os",
+  "compatibility_date": "2026-08-31",
+  "assets": {
+    "directory": "./public"
+  }
+}

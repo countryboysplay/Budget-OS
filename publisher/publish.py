@@ -2,8 +2,9 @@
 Budget-OS publisher
 
 Watches the five sales comparison workbooks in Dropbox. When one is saved,
-reads the ANALYSIS FROM GR. SLS. REPORT tab, writes data/<location>.json
-in the repo, commits, and pushes. Cloudflare Pages redeploys on push.
+reads the ANALYSIS FROM GR. SLS. REPORT tab, writes
+public/data/<location>.json in the repo, commits, and pushes. Cloudflare
+Workers Builds redeploys the site on push.
 
 Usage:
     python publish.py            publish everything once, then watch for changes
@@ -29,6 +30,11 @@ from openpyxl.utils import range_boundaries
 HERE = Path(__file__).resolve().parent
 CONFIG_PATH = HERE / "config.json"
 LOG_PATH = HERE / "publisher.log"
+
+# The site's files live in public/ (see wrangler.jsonc "assets.directory"),
+# so the generated JSON goes there. Relative to repo_dir; also the path that
+# gets staged for commit.
+DATA_SUBDIR = "public/data"
 
 # Sheet column letter -> JSON key. Column J is a spacer and is skipped.
 COLUMNS = {
@@ -216,8 +222,8 @@ def git(repo_dir: str, *args, check=True):
 
 
 def commit_and_push(repo_dir: str, message: str, push: bool = True) -> bool:
-    git(repo_dir, "add", "data")
-    if not git(repo_dir, "status", "--porcelain", "data").stdout.strip():
+    git(repo_dir, "add", DATA_SUBDIR)
+    if not git(repo_dir, "status", "--porcelain", DATA_SUBDIR).stdout.strip():
         log.info("No data changes to commit.")
         return False
     git(repo_dir, "commit", "-m", message)
@@ -239,7 +245,7 @@ def commit_and_push(repo_dir: str, message: str, push: bool = True) -> bool:
 # ---------------------------------------------------------------- publish
 
 def publish(cfg: dict, keys=None, push: bool = True) -> None:
-    data_dir = Path(cfg["repo_dir"]) / "data"
+    data_dir = Path(cfg["repo_dir"]) / DATA_SUBDIR
     changed = []
     for loc in cfg["locations"]:
         if keys and loc["key"] not in keys:
