@@ -1,30 +1,30 @@
 {
- "generated_at": "2026-10-26T22:37:43+00:00",
+ "generated_at": "2026-11-04T12:57:41+00:00",
  "locations": [
   {
    "key": "bowling-green",
    "label": "Bowling Green",
-   "updated_at": "2026-10-26T22:13:36+00:00"
+   "updated_at": "2026-11-04T12:57:38+00:00"
   },
   {
    "key": "evansville",
    "label": "Evansville",
-   "updated_at": "2026-10-26T22:37:43+00:00"
+   "updated_at": "2026-11-04T12:57:39+00:00"
   },
   {
    "key": "owensboro",
    "label": "Owensboro",
-   "updated_at": "2026-10-26T22:20:41+00:00"
+   "updated_at": "2026-11-04T12:57:40+00:00"
   },
   {
    "key": "southern-illinois",
    "label": "Southern Illinois",
-   "updated_at": "2026-10-26T22:03:01+00:00"
+   "updated_at": "2026-11-04T12:57:41+00:00"
   },
   {
    "key": "paducah",
    "label": "Paducah",
-   "updated_at": "2026-10-26T21:52:03+00:00"
+   "updated_at": "2026-11-04T12:57:41+00:00"
   }
  ]
 }

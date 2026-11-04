@@ -1,8 +1,8 @@
 {
  "key": "evansville",
  "label": "Evansville",
- "generated_at": "2026-10-26T22:37:43+00:00",
- "source_modified": "2026-10-26T22:37:17+00:00",
+ "generated_at": "2026-11-04T12:57:39+00:00",
+ "source_modified": "2026-11-03T16:30:57+00:00",
  "rows": [
   {
    "category": "RENEWAL",
@@ -12,15 +12,15 @@
    "quotes_completed": 161,
    "ytd_gross": 2495,
    "ytd_net": 1970,
-   "est_remaining_gross": 0.84,
-   "est_ye_net": 1921.8,
+   "est_remaining_gross": 0.44,
+   "est_ye_net": 1921.49,
    "ye_budget": 1930.46,
-   "pct_of_budget": 99.55,
+   "pct_of_budget": 99.54,
    "ytd_net_dollars": 1089528.2,
-   "est_ye_net_dollars": 1073512.53,
+   "est_ye_net_dollars": 1073340.48,
    "ye_budget_dollars": 1078348,
-   "est_variance_dollars": -4835.47,
-   "est_variance_pct": -0.45
+   "est_variance_dollars": -5007.52,
+   "est_variance_pct": -0.46
   },
   {
    "category": "OLD PROSPECTS",
@@ -30,15 +30,15 @@
    "quotes_completed": 37,
    "ytd_gross": 43,
    "ytd_net": 35,
-   "est_remaining_gross": 2.02,
-   "est_ye_net": 33.77,
+   "est_remaining_gross": 2.01,
+   "est_ye_net": 33.76,
    "ye_budget": 50.16,
-   "pct_of_budget": 67.32,
+   "pct_of_budget": 67.3,
    "ytd_net_dollars": 18439.4,
-   "est_ye_net_dollars": 18570.75,
+   "est_ye_net_dollars": 18566.62,
    "ye_budget_dollars": 23308.69,
-   "est_variance_dollars": -4737.94,
-   "est_variance_pct": -20.33
+   "est_variance_dollars": -4742.07,
+   "est_variance_pct": -20.34
   },
   {
    "category": "OLD PROSPECTS - PRIORITY",
@@ -444,15 +444,15 @@
    "quotes_completed": null,
    "ytd_gross": 3161,
    "ytd_net": 2504,
-   "est_remaining_gross": 21.99,
-   "est_ye_net": 2450.74,
+   "est_remaining_gross": 21.58,
+   "est_ye_net": 2450.43,
    "ye_budget": 2633.28,
-   "pct_of_budget": 93.07,
+   "pct_of_budget": 93.06,
    "ytd_net_dollars": 1361210.76,
-   "est_ye_net_dollars": 1353158.02,
+   "est_ye_net_dollars": 1352981.85,
    "ye_budget_dollars": 1420798.5,
-   "est_variance_dollars": -67640.48,
-   "est_variance_pct": -4.76
+   "est_variance_dollars": -67816.65,
+   "est_variance_pct": -4.77
   },
   {
    "category": "INDUSTRIALS",
@@ -517,14 +517,14 @@
    "ytd_gross": 1429,
    "ytd_net": 966,
    "est_remaining_gross": 0,
-   "est_ye_net": 943.14,
+   "est_ye_net": 966,
    "ye_budget": 1459.89,
-   "pct_of_budget": 64.6,
+   "pct_of_budget": 66.17,
    "ytd_net_dollars": 162896.58,
-   "est_ye_net_dollars": 159041.7,
+   "est_ye_net_dollars": 162896.58,
    "ye_budget_dollars": 248558.71,
-   "est_variance_dollars": -89517.02,
-   "est_variance_pct": -36.01
+   "est_variance_dollars": -85662.13,
+   "est_variance_pct": -34.46
   },
   {
    "category": "FALL AERATION & SEED",
@@ -1259,10 +1259,10 @@
    "ye_budget": null,
    "pct_of_budget": null,
    "ytd_net_dollars": 2034769.86,
-   "est_ye_net_dollars": 2022862.24,
+   "est_ye_net_dollars": 2026540.95,
    "ye_budget_dollars": 2154847.14,
-   "est_variance_dollars": -131984.9,
-   "est_variance_pct": -6.13
+   "est_variance_dollars": -128306.19,
+   "est_variance_pct": -5.95
   }
  ]
 }
