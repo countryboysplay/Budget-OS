@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T23:52:18+00:00",
+ "generated_at": "2026-11-16T23:57:35+00:00",
  "locations": [
   {
    "key": "bowling-green",
@@ -24,7 +24,7 @@
   {
    "key": "paducah",
    "label": "Paducah",
-   "updated_at": "2026-11-10T16:30:06+00:00"
+   "updated_at": "2026-11-16T23:57:35+00:00"
   }
  ]
 }
