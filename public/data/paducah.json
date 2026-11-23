@@ -1,8 +1,8 @@
 {
  "key": "paducah",
  "label": "Paducah",
- "generated_at": "2026-11-16T23:57:35+00:00",
- "source_modified": "2026-11-16T23:57:06+00:00",
+ "generated_at": "2026-11-23T20:35:28+00:00",
+ "source_modified": "2026-11-23T20:35:05+00:00",
  "rows": [
   {
    "category": "RENEWAL",
@@ -11,12 +11,12 @@
    "quotes_booked": 31,
    "quotes_completed": 31,
    "ytd_gross": 555,
-   "ytd_net": 402,
+   "ytd_net": 400,
    "est_remaining_gross": 0,
    "est_ye_net": 377.4,
    "ye_budget": 399.43,
    "pct_of_budget": 94.48,
-   "ytd_net_dollars": 281223.12,
+   "ytd_net_dollars": 280732,
    "est_ye_net_dollars": 269841,
    "ye_budget_dollars": 286990.21,
    "est_variance_dollars": -17149.21,
@@ -35,10 +35,10 @@
    "ye_budget": 21.52,
    "pct_of_budget": 52.04,
    "ytd_net_dollars": 6215.4,
-   "est_ye_net_dollars": 7121.95,
+   "est_ye_net_dollars": 6160,
    "ye_budget_dollars": 13685.1,
-   "est_variance_dollars": -6563.16,
-   "est_variance_pct": -47.96
+   "est_variance_dollars": -7525.1,
+   "est_variance_pct": -54.99
   },
   {
    "category": "OLD PROSPECTS - PRIORITY",
@@ -52,7 +52,7 @@
    "est_ye_net": 4.9,
    "ye_budget": 11.5,
    "pct_of_budget": 42.61,
-   "ytd_net_dollars": 2820.25,
+   "ytd_net_dollars": 2759.35,
    "est_ye_net_dollars": 2817.5,
    "ye_budget_dollars": 7214.04,
    "est_variance_dollars": -4396.54,
@@ -107,10 +107,10 @@
    "ye_budget": 31.6,
    "pct_of_budget": 99.12,
    "ytd_net_dollars": 25879.04,
-   "est_ye_net_dollars": 25056,
+   "est_ye_net_dollars": 25369.2,
    "ye_budget_dollars": 19799.78,
-   "est_variance_dollars": 5256.22,
-   "est_variance_pct": 26.55
+   "est_variance_dollars": 5569.42,
+   "est_variance_pct": 28.13
   },
   {
    "category": "FIELD SALES",
@@ -138,15 +138,15 @@
    "quotes_completed": 19,
    "ytd_gross": 9,
    "ytd_net": 8,
-   "est_remaining_gross": 1.2,
-   "est_ye_net": 8.67,
+   "est_remaining_gross": 0,
+   "est_ye_net": 7.65,
    "ye_budget": 9.12,
-   "pct_of_budget": 95.07,
+   "pct_of_budget": 83.88,
    "ytd_net_dollars": 6125.6,
-   "est_ye_net_dollars": 7152.75,
+   "est_ye_net_dollars": 6311.25,
    "ye_budget_dollars": 5627.45,
-   "est_variance_dollars": 1525.3,
-   "est_variance_pct": 27.1
+   "est_variance_dollars": 683.8,
+   "est_variance_pct": 12.15
   },
   {
    "category": "PICK-UPS",
@@ -156,15 +156,15 @@
    "quotes_completed": 27,
    "ytd_gross": 11,
    "ytd_net": 9,
-   "est_remaining_gross": 1.53,
-   "est_ye_net": 10.02,
+   "est_remaining_gross": 0,
+   "est_ye_net": 8.8,
    "ye_budget": 16.96,
-   "pct_of_budget": 59.1,
+   "pct_of_budget": 51.89,
    "ytd_net_dollars": 7132.59,
-   "est_ye_net_dollars": 8520.4,
+   "est_ye_net_dollars": 7480,
    "ye_budget_dollars": 12258.94,
-   "est_variance_dollars": -3738.54,
-   "est_variance_pct": -30.5
+   "est_variance_dollars": -4778.94,
+   "est_variance_pct": -38.98
   },
   {
    "category": "CROSS MARKETING",
@@ -192,15 +192,15 @@
    "quotes_completed": 25,
    "ytd_gross": 4,
    "ytd_net": 4,
-   "est_remaining_gross": 1.54,
-   "est_ye_net": 4.71,
+   "est_remaining_gross": 0,
+   "est_ye_net": 3.4,
    "ye_budget": 16.49,
-   "pct_of_budget": 28.56,
+   "pct_of_budget": 20.62,
    "ytd_net_dollars": 1625.56,
-   "est_ye_net_dollars": 2354.5,
+   "est_ye_net_dollars": 1700,
    "ye_budget_dollars": 10654.35,
-   "est_variance_dollars": -8299.85,
-   "est_variance_pct": -77.9
+   "est_variance_dollars": -8954.35,
+   "est_variance_pct": -84.04
   },
   {
    "category": "SEARCH ENGINE MARKETING",
@@ -443,16 +443,16 @@
    "quotes_booked": null,
    "quotes_completed": null,
    "ytd_gross": 719,
-   "ytd_net": 519,
-   "est_remaining_gross": 4.27,
-   "est_ye_net": 494.62,
+   "ytd_net": 517,
+   "est_remaining_gross": 0,
+   "est_ye_net": 491.07,
    "ye_budget": 557.8,
-   "pct_of_budget": 88.67,
-   "ytd_net_dollars": 363760.41,
-   "est_ye_net_dollars": 356479.1,
+   "pct_of_budget": 88.04,
+   "ytd_net_dollars": 363208.39,
+   "est_ye_net_dollars": 353293.95,
    "ye_budget_dollars": 392215.74,
-   "est_variance_dollars": -35736.65,
-   "est_variance_pct": -9.11
+   "est_variance_dollars": -38921.79,
+   "est_variance_pct": -9.92
   },
   {
    "category": "INDUSTRIALS",
@@ -803,16 +803,16 @@
    "quotes_booked": null,
    "quotes_completed": null,
    "ytd_gross": 192,
-   "ytd_net": 155,
+   "ytd_net": 154,
    "est_remaining_gross": 0,
-   "est_ye_net": 155,
+   "est_ye_net": 154,
    "ye_budget": 178.5,
-   "pct_of_budget": 86.84,
-   "ytd_net_dollars": 12575.15,
-   "est_ye_net_dollars": 12575.15,
+   "pct_of_budget": 86.28,
+   "ytd_net_dollars": 12387.76,
+   "est_ye_net_dollars": 12387.76,
    "ye_budget_dollars": 11961.11,
-   "est_variance_dollars": 614.04,
-   "est_variance_pct": 5.13
+   "est_variance_dollars": 426.65,
+   "est_variance_pct": 3.57
   },
   {
    "category": "MOLE CONTROL",
@@ -1258,11 +1258,11 @@
    "est_ye_net": null,
    "ye_budget": null,
    "pct_of_budget": null,
-   "ytd_net_dollars": 577155.4,
-   "est_ye_net_dollars": 569936.18,
+   "ytd_net_dollars": 576415.99,
+   "est_ye_net_dollars": 566563.64,
    "ye_budget_dollars": 598961.44,
-   "est_variance_dollars": -29025.27,
-   "est_variance_pct": -4.85
+   "est_variance_dollars": -32397.8,
+   "est_variance_pct": -5.41
   }
  ]
 }
